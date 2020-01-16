@@ -27,9 +27,12 @@ playGames = 0
 accountBank = 0
 # - выход
 exitProgame = 0
+choice = 0
+import os
+import sys
 while True:
     print("1. создать папку")
-    7rint("2. удалить папку")
+    print("2. удалить папку")
     print("3. копировать файл/папку")
     print("4. вывод всех объектов в рабочей папке")
     print("5. вывод только папок которые находятся в рабочей папке")
@@ -39,7 +42,7 @@ while True:
     print("9. запуск программы для работы с банковским счетом")
     choice = input('Выбери пункт меню:')
     if choice == '1':
-        balance = int(input('введите сумму пополнения баланса:'))
+        os.mkdir('new')
     elif choice == '2':
         pokupka = int(input('введите сумму покупки:'))
         if balance - pokupka < 0:
