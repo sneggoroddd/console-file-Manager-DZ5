@@ -30,6 +30,7 @@ exitProgame = 0
 choice = 0
 import os
 import sys
+import shutil
 while True:
     print("1. создать папку")
     print("2. удалить папку")
@@ -44,13 +45,7 @@ while True:
     if choice == '1':
         os.mkdir('new')
     elif choice == '2':
-        pokupka = int(input('введите сумму покупки:'))
-        if balance - pokupka < 0:
-            print('Недостаточно средств')
-        else:
-            balance = balance - pokupka
-            name = input('введите название покупки:')
-            history.append((name,pokupka))
+        os.rmdir('new')
     elif choice == '3':
         print(history)
     elif choice == '4':
