@@ -47,9 +47,9 @@ while True:
     elif choice == '2':
         os.rmdir('new')
     elif choice == '3':
-        print(history)
+        shutil.copyfile(new, copyNew, follow_symlinks=True)
     elif choice == '4':
-        print('Спасибо за пользование сервисом')
+        print(os.listdir(path="."))
     elif choice == '5':
         print("Ваш баланс:", balance)
     else:
