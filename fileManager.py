@@ -31,6 +31,7 @@ choice = 0
 import os
 import sys
 import shutil
+cwd = 0
 while True:
     print("1. создать папку")
     print("2. удалить папку")
@@ -51,6 +52,17 @@ while True:
     elif choice == '4':
         print(os.listdir(path="."))
     elif choice == '5':
-        print("Ваш баланс:", balance)
+        cwd = os.getcwd()
+        onlydirs = [d for d in os.listdir(cwd) if os.path.isdir(os.path.join(cwd, d))]
+        print(onlydirs)
+    elif choice == '6':
+        print(sys.platform)
+    elif choice == '7':
+        print('Savoskin Pavel, Moscow, 2020')
+    elif choice == '8':
+        print(sys.platform)
+
+
+
     else:
         print("неверный пункт меню")
