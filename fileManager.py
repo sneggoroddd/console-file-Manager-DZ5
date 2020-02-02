@@ -26,13 +26,15 @@ playGames = 0
 # запуск программы для работы с банковским счетом из предыдущего дз (задание учебное, после выхода из программы управлением счетом в главной программе сумму и историю покупок можно не запоминать);
 accountBank = 0
 # - выход
+#https://github.com/sneggoroddd/console-file-Manager-DZ5/pull/2
 exitProgame = 0
 choice = 0
 import os
 import sys
 import shutil
 cwd = 0
-while True:
+exit = "no"
+while exit == 'no':
     print("1. создать папку")
     print("2. удалить папку")
     print("3. копировать файл/папку")
@@ -41,7 +43,7 @@ while True:
     print("6. вывести информацию об операционной системе")
     print("7. вывод информации о создателе программы")
     print("8. играть в викторину")
-    print("9. запуск программы для работы с банковским счетом")
+    print("10. Выход")
     choice = input('Выбери пункт меню:')
     if choice == '1':
         os.mkdir('new')
@@ -60,9 +62,10 @@ while True:
     elif choice == '7':
         print('Savoskin Pavel, Moscow, 2020')
     elif choice == '8':
-        print(sys.platform)
-
-
-
+        import victory
+    elif choice == '9':
+        import accountBanc
+    elif choice == '10':
+        exit = "yes"
     else:
         print("неверный пункт меню")
