@@ -3,6 +3,7 @@ createFolder = 0
 #удаляем папку
 remoteFolder = 0
 #- копировать (файл/папку) после выбора пользователь вводит название папки/файла и новое название папки/файла. Копируем;
+Folder = 0
 copyFolder = 0
 # просмотр содержимого рабочей директории
 # вывод всех объектов в рабочей папке;
@@ -50,7 +51,8 @@ while exit == 'no':
     elif choice == '2':
         os.rmdir('new')
     elif choice == '3':
-        shutil.copyfile(new, copyNew, follow_symlinks=True)
+        Folder = int(input("введите название папки:"))
+        shutil.copy(Folder, copyFolder)
     elif choice == '4':
         print(os.listdir(path="."))
     elif choice == '5':
