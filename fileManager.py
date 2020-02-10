@@ -4,7 +4,8 @@ createFolder = 0
 remoteFolder = 0
 #- копировать (файл/папку) после выбора пользователь вводит название папки/файла и новое название папки/файла. Копируем;
 Folder = 0
-copyFolder = 0
+way = "console-file-Manager-DZ52"
+copyFolder= way
 # просмотр содержимого рабочей директории
 # вывод всех объектов в рабочей папке;
 viewDirectory = 0
@@ -51,7 +52,7 @@ while exit == 'no':
     elif choice == '2':
         os.rmdir('new')
     elif choice == '3':
-        Folder = int(input("введите название папки:"))
+        Folder = (input("введите название папки:"))
         shutil.copy(Folder, copyFolder)
     elif choice == '4':
         print(os.listdir(path="."))
