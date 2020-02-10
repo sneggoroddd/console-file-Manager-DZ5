@@ -55,7 +55,7 @@ while exit == 'no':
     elif choice == '3':
         Folder = input("введите название папки, которую нужно копировать:")
         copyFolder = input("введите название папки, КУДА нужно копировать:")
-        shutil.copy(Folder, copyFolder)
+        shutil.copytree(Folder, copyFolder)
     elif choice == '4':
         print(os.listdir(path="."))
     elif choice == '5':
