@@ -3,7 +3,8 @@ createFolder = 0
 #удаляем папку
 remoteFolder = 0
 #- копировать (файл/папку) после выбора пользователь вводит название папки/файла и новое название папки/файла. Копируем;
-copyFolder = 0
+Folder = 0
+copyFolder= 0
 # просмотр содержимого рабочей директории
 # вывод всех объектов в рабочей папке;
 viewDirectory = 0
@@ -26,13 +27,15 @@ playGames = 0
 # запуск программы для работы с банковским счетом из предыдущего дз (задание учебное, после выхода из программы управлением счетом в главной программе сумму и историю покупок можно не запоминать);
 accountBank = 0
 # - выход
+#https://github.com/sneggoroddd/console-file-Manager-DZ5/pull/2
 exitProgame = 0
 choice = 0
 import os
 import sys
 import shutil
 cwd = 0
-while True:
+exit = "no"
+while exit == 'no':
     print("1. создать папку")
     print("2. удалить папку")
     print("3. копировать файл/папку")
@@ -41,14 +44,18 @@ while True:
     print("6. вывести информацию об операционной системе")
     print("7. вывод информации о создателе программы")
     print("8. играть в викторину")
-    print("9. запуск программы для работы с банковским счетом")
+    print("10. Выход")
     choice = input('Выбери пункт меню:')
     if choice == '1':
-        os.mkdir('new')
+        createFolder = input("введите название папки:")
+        os.mkdir(createFolder)
     elif choice == '2':
-        os.rmdir('new')
+        remoteFolder = input("введите название папки:")
+        os.rmdir(remoteFolder)
     elif choice == '3':
-        shutil.copyfile(new, copyNew, follow_symlinks=True)
+        Folder = input("введите название папки, которую нужно копировать:")
+        copyFolder = input("введите название папки, КУДА нужно копировать:")
+        shutil.copytree(Folder, copyFolder)
     elif choice == '4':
         print(os.listdir(path="."))
     elif choice == '5':
@@ -60,9 +67,10 @@ while True:
     elif choice == '7':
         print('Savoskin Pavel, Moscow, 2020')
     elif choice == '8':
-        print(sys.platform)
-
-
-
+        import victory
+    elif choice == '9':
+        import accountBanc
+    elif choice == '10':
+        exit = "yes"
     else:
         print("неверный пункт меню")
